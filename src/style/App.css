@@ -1,0 +1,23 @@
+#App {
+  width: 100vw;
+  height: 100vh;
+
+  border: 1px solid var(--border-color);
+}
+
+#App > * {
+  padding: var(--panel-padding);
+  overflow: scroll;
+  -ms-overflow-style: none;  /* Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+#App > *::-webkit-scrollbar {
+  display: none;  /* Safari */
+}
+
+/* Prevent text enlargement on landscape iOS */
+@media (orientation: landscape) {
+	html {
+		-webkit-text-size-adjust: 100%;
+	}
+}
