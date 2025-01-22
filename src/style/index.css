@@ -1,66 +1,109 @@
 html[data-theme="light"] {
+    --accent: rgb(1, 95, 184);
+    --txt: rgb(59, 59, 59);
+    --txt-secondary: rgb(134, 134, 134);
+    --txt-variable: rgb(0, 16, 128);
+    --txt-function: rgb(142, 122, 79);
+    --txt-bracket: rgb(39, 73, 252);
+    --txt-bracket-alt: rgb(48, 147, 49);
+    --txt-numeral: rgb(11, 134, 88);
+    --txt-string: rgb(163, 21, 21);
+    --txt-comment: rgb(25, 133, 19);
 
+    --content-bg: rgb(255, 255, 255);
+    --content-txt-header: rgb(120, 120, 120);
+    --content-txt-header-active: rgb(76, 76, 76);
+    --content-txt-side: rgb(109, 118, 129);
+    --content-txt-side-active: rgb(23, 17, 132);
+    --content-block-line: rgb(211, 211, 211);
+    --content-block-line-active: rgb(147, 147, 147);
+    --content-line-border: rgb(238, 238, 238);
+
+    --sidebar-bg: rgb(248, 248, 248);
+    --sidebar-icon: rgb(97, 97, 97);
+    --sidebar-icon-active: rgb(31, 31, 31);
+    --sidebar-block-line-hover: rgb(213, 213, 213);
+    --sidebar-block-line-active: rgb(169, 169, 169);
+    --sidebar-line-select-active: rgb(232, 232, 232);
+    --sidebar-line-select-active-border: var(--accent);
+    --sidebar-line-select-inactive: rgb(228, 230, 241);
+    --sidebar-line-hover: rgb(242, 242, 242);
+
+    --tabs-bg: var(--sidebar-bg);
+    --tabs-txt: var(--txt-secondary);
+    --tabs-txt-active: var(--txt);
+    --tabs-border-active: var(--accent);
+    --tabs-close-txt: rgb(134, 134, 134);
+    --tabs-close-bg-hover: rgb(233, 233, 233);
+    --tabs-close-bg-active: rgb(228, 228, 228);
+
+    --footer-bg: var(--sidebar-bg);
+
+    --border-color: rgb(229, 229, 229);
+
+    --icon-html: rgb(206, 114, 57);
 }
 html[data-theme="dark"] {
-  --accent: rgb(1, 120, 212);
-  --txt: rgb(204, 204, 204);
-  --txt-secondary: rgb(157, 157, 157);
-  --txt-variable: rgb(156, 220, 254);
-  --txt-function: rgb(202, 203, 259);
-  --txt-bracket: rgb(255, 215, 3);
-  --txt-bracket-alt: rgb(218, 112, 214);
-  --txt-numeral: rgb(181, 206, 168);
-  --txt-string: rgb(205, 145, 120);
-  --txt-comment: rgb(103, 148, 84);
+    --accent: rgb(0, 120, 212);
+    --txt: rgb(204, 204, 204);
+    --txt-secondary: rgb(157, 157, 157);
+    --txt-variable: rgb(156, 220, 254);
+    --txt-function: rgb(200, 200, 155);
+    --txt-bracket: rgb(255, 215, 3);
+    --txt-bracket-alt: rgb(218, 112, 214);
+    --txt-numeral: rgb(181, 206, 168);
+    --txt-string: rgb(205, 145, 120);
+    --txt-comment: rgb(103, 148, 84);
 
-  --content-bg: rgb(32, 32, 32);
-  --content-txt-header: rgb(174, 174, 174);
-  --content-txt-header-active: rgb(224, 224, 225);
-  --content-txt-side: rgb(110, 118, 129);
-  --content-txt-side-active: var(--content-txt);
-  --content-block-line: rgb(64, 64, 64);
-  --content-block-line-active: rgb(112, 112, 112);
-  --content-line-border: rgb(40, 40, 40);
+    --content-bg: rgb(32, 32, 32);
+    --content-txt-header: rgb(164, 164, 164);
+    --content-txt-header-active: rgb(217, 217, 217);
+    --content-txt-side: rgb(109, 118, 129);
+    --content-txt-side-active: var(--txt);
+    --content-block-line: rgb(64, 64, 64);
+    --content-block-line-active: rgb(112, 112, 112);
+    --content-line-border: rgb(40, 40, 40);
 
-  --sidebar-bg: rgb(24, 24, 24);
-  --sidebar-icon: rgb(134, 134, 134);
-  --sidebar-icon-active: rgb(207, 207, 207);
-  --sidebar-block-line-hover: rgb(45, 45, 45);
-  /* CHECK IF COLOR BELOW IS SIMPLY TRANSPARENT --ACCENT COLOR */
-  --sidebar-block-line-active: rgb(3, 58, 94);
-  --sidebar-block-line-active-border: var(--accent);
-  --sidebar-line-select-active: rgb(55, 55, 61);
-  --sidebar-line-select-inactive: rgb(55, 55, 61);
-  --sidebar-line-hover: rgb(42, 45, 47);
+    --sidebar-bg: rgb(24, 24, 24);
+    --sidebar-icon: rgb(134, 134, 134);
+    --sidebar-icon-active: rgb(207, 207, 207);
+    --sidebar-block-line-hover: rgb(68, 68, 71);
+    --sidebar-block-line-active: rgb(88, 88, 88);
+    --sidebar-line-select-active: rgb(3, 57, 94);
+    --sidebar-line-select-active-border: var(--accent);
+    --sidebar-line-select-inactive: rgb(55, 55, 60);
+    --sidebar-line-hover: rgb(43, 45, 46);
 
-  --tabs-bg: var(--sidebar-bg);
-  --tabs-border-active: var(--accent);
-  --tabs-close-txt: rgb(154, 154, 154);
-  --tabs-close-txt-active: rgb(255, 255, 255);
-  --tabs-close-bg-hover: rgb(51, 52, 52);
+    --tabs-bg: var(--sidebar-bg);
+    --tabs-txt: var(--txt-secondary);
+    --tabs-txt-active: rgb(255, 255, 255);
+    --tabs-border-active: var(--accent);
+    --tabs-close-txt: rgb(154, 154, 154);
+    --tabs-close-bg-hover: rgb(51, 52, 52);
+    --tabs-close-bg-active: rgb(53, 55, 55);
 
-  --footer-bg: var(--sidebar-bg);
+    --footer-bg: var(--sidebar-bg);
 
-  --border-color: rgb(43, 43, 43);
+    --border-color: rgb(43, 43, 43);
+
+    --icon-html: rgb(220, 118, 15);
 }
 
 :root {
-  --sidebar-width: 175px;
-  --tabs-height: 40px;
-  --content-height: 65%;
-
-  --panel-padding: 12px 20px;
+    --sidebar-width: 175px;
+    --tabs-height: 40px;
+    --content-height: 65%;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  overflow: hidden;
-  font-family: "Roboto", serif;
-  font-size: 14px;
-  color: var(--txt);
+    overflow: hidden;
+    font-family: "Roboto", serif;
+    font-size: 13px;
+    color: var(--txt);
 }

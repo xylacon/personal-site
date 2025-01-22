@@ -1,76 +1,85 @@
 #Tabs {
 	position: fixed;
-  top: 0;
-  left: var(--sidebar-width);
+    top: 0;
+    left: var(--sidebar-width);
 
-  width: calc(100% - var(--sidebar-width));
-  height: var(--tabs-height);
-  padding: 0;
-  display: flex;
-  justify-content: start;
-  align-items: stretch;
+    width: calc(100% - var(--sidebar-width));
+    height: var(--tabs-height);
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
 
-  background-color: var(--tabs-bg);
+    background-color: var(--tabs-bg);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 #Tabs ul {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 #Tabs .spacer {
-  border-bottom: 1px solid var(--border-color);
-  width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
 }
 
 .tab {
-  max-width: 400px;
-  padding: 8px 12px;
-  padding-right: 4px;
+    cursor: pointer;
+    max-width: 400px;
+    padding: 8px 12px;
+    padding-right: 4px;
 
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  border-top: 1px solid rgba(0, 0, 0, 0);
-  border-right: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+
+    color: var(--tabs-txt);
 }
 .tab:hover {
-  cursor: pointer;
-  background-color: var(--content-bg);
+    background-color: var(--content-bg);
+}
+
+.tab p {
+    overflow: hidden;
+    text-wrap-mode: nowrap;
+    text-overflow: ellipsis;
 }
 
 .tab.active {
-  background-color: var(--content-bg);
-  border-top: 1px solid var(--tabs-border-active);
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
-}
-
-.tab li {
-  overflow: hidden;
-  text-wrap-mode: nowrap;
-  text-overflow: ellipsis;
+    background-color: var(--content-bg);
+    border-top: 1px solid var(--tabs-border-active);
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    color: var(--tabs-txt-active);
 }
 
 .close {
-  visibility: hidden;
-  padding: 0 5px 1px 5px;
-  border-radius: 5px;
+    visibility: hidden;
+    padding: 0 5px 2px 5px;
+    border-radius: 5px;
 
-  font-size: 1.4em;
-  font-weight: 100;
-  line-height: 0.9em;
-  color: var(--tabs-close-txt);
+    font-size: 1.4em;
+    font-weight: 100;
+    line-height: 0.9em;
+    color: var(--tabs-close-txt);
 }
 .tab.active .close {
-  visibility: visible;
-  color: var(--tabs-close-txt-active);
+    visibility: visible;
+    color: var(--tabs-close-txt-active);
 }
 .tab:hover .close {
-  visibility: visible;
+    visibility: visible;
 }
 .close:hover {
-  background-color: var(--tabs-close-bg-hover);
+    background-color: var(--tabs-close-bg-hover);
+}
+.close:active {
+    background-color: var(--tabs-close-bg-active);
 }

@@ -1,0 +1,54 @@
+[
+	{
+		"id": "home.html",
+		"label": "home.html",
+		"icon": "html"
+	},
+	{
+        "id": "about.html",
+        "label": "about.html",
+        "icon": "html"
+    },
+    {
+        "id": "contact.html",
+        "label": "contact.html",
+        "icon": "html"
+    },
+	{
+        "id": "Projects",
+        "label": "Projects",
+        "children": [
+            {
+                "id": "project1.html",
+                "label": "project1.html",
+                "icon": "html"
+            },
+            {
+                "id": "project2.html",
+                "label": "project2.html",
+                "icon": "html"
+            },
+            {
+                "id": "project-3",
+                "label": "Project 3",
+                "children": [
+                    {
+                        "id": "file1.html",
+                        "label": "file1.html",
+                        "icon": "html"
+                    },
+                    {
+                        "id": "file2.html",
+                        "label": "file2.html",
+                        "icon": "html"
+                    }
+                ]
+            }
+        ]
+	},
+    {
+        "id": "readme.md",
+        "label": "README.md",
+        "icon": "markdown"
+    }
+]

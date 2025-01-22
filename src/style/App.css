@@ -1,18 +1,27 @@
 #App {
-  width: 100vw;
-  height: 100vh;
-
-  border: 1px solid var(--border-color);
+    width: 100vw;
+    height: 100vh;
 }
 
 #App > * {
-  padding: var(--panel-padding);
-  overflow: scroll;
-  -ms-overflow-style: none;  /* Edge */
-  scrollbar-width: none;  /* Firefox */
+    overflow: scroll;
+    -ms-overflow-style: none;  /* Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 #App > *::-webkit-scrollbar {
-  display: none;  /* Safari */
+    
+}
+
+.icon {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85em;
+    width: 1.2em;
+}
+.icon.html {
+    color: var(--icon-html);
 }
 
 /* Prevent text enlargement on landscape iOS */

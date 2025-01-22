@@ -1,10 +1,12 @@
 #Footer {
-	position: fixed;
-  top: calc(var(--tabs-height) + var(--content-height));
-  left: var(--sidebar-width);
+    position: fixed;
+    top: calc(var(--tabs-height) + var(--content-height));
+    left: var(--sidebar-width);
 
-  width: calc(100% - var(--sidebar-width));
-  height: calc(100% - var(--tabs-height) - var(--content-height));
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100% - var(--tabs-height) - var(--content-height));
 
-  background-color: var(--footer-bg);
+    background-color: var(--footer-bg);
+    border: 1px solid var(--border-color);
+    border-left: none;
 }

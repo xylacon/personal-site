@@ -1,13 +1,14 @@
 #Content {
-	position: fixed;
-  top: var(--tabs-height);
-  left: var(--sidebar-width);
+    position: fixed;
+    top: var(--tabs-height);
+    left: var(--sidebar-width);
 
-  width: calc(100% - var(--sidebar-width));
-  height: var(--content-height);
+    width: calc(100% - var(--sidebar-width));
+    height: var(--content-height);
 
-  font-family: "Roboto Mono", serif;
-  font-optical-sizing: auto;
+    font-family: "Roboto Mono", serif;
+    font-optical-sizing: auto;
 
-  background-color: var(--content-bg);
+    background-color: var(--content-bg);
+    border-right: 1px solid var(--border-color);
 }

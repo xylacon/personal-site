@@ -1,15 +1,62 @@
 #Sidebar {
-  position: fixed;
-	top: 0;
-  left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-  width: var(--sidebar-width);
-  height: 100%;
+    width: var(--sidebar-width);
+    height: 100%;
 
-  background-color: var(--sidebar-bg);
-  border-right: 1px solid var(--border-color);
+    background-color: var(--sidebar-bg);
+    border: 1px solid var(--border-color);
+
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+#Sidebar.active {
+    border-color: var(--accent);
 }
 
-#Sidebar li {
-  list-style: none;
+#Sidebar .node {
+    cursor: pointer;
+    list-style: none;
+    width: 100%;
+    padding: 3px 4px;
+    border: 1px solid var(--sidebar-bg);
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+}
+#Sidebar .node:hover {
+    background-color: var(--sidebar-line-hover);
+    border-color: var(--sidebar-bg);
+}
+#Sidebar .node.active {
+    background-color: var(--sidebar-line-select-active);
+    border-color: var(--sidebar-line-select-active-border);
+}
+#Sidebar .node.inactive {
+    background-color: var(--sidebar-line-select-inactive);
+    border-color: var(--sidebar-line-select-inactive);
+}
+
+#Sidebar ul.open > .title > .folder {
+    transform: rotate(90deg);
+}
+
+#Sidebar ul > :not(:first-child) {
+    display: none;
+}
+#Sidebar ul.open > :not(:first-child) {
+    display: block;
+}
+#Sidebar ul.open > .node:not(:first-child) {
+    display: flex;
+}
+
+#Title {
+    font-weight: 700;
+    text-transform: uppercase;
 }
