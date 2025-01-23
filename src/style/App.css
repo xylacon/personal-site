@@ -8,9 +8,6 @@
     -ms-overflow-style: none;  /* Edge */
     scrollbar-width: none;  /* Firefox */
 }
-#App > *::-webkit-scrollbar {
-    
-}
 
 .icon {
     overflow: hidden;
