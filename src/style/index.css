@@ -67,7 +67,7 @@ html[data-theme="dark"] {
     --sidebar-bg: rgb(24, 24, 24);
     --sidebar-icon: rgb(134, 134, 134);
     --sidebar-icon-active: rgb(207, 207, 207);
-    --sidebar-block-line-hover: rgb(68, 68, 71);
+    --sidebar-block-line-hover: rgb(51, 51, 51);
     --sidebar-block-line-active: rgb(88, 88, 88);
     --sidebar-line-select-active: rgb(3, 57, 94);
     --sidebar-line-select-active-border: var(--accent);

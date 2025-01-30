@@ -10,6 +10,7 @@
     align-items: stretch;
 
     background-color: var(--tabs-bg);
+    border-top: 1px solid var(--border-color);
 
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -28,6 +29,7 @@
 
 .tab {
     cursor: pointer;
+    position: relative;
     max-width: 400px;
     padding: 8px 12px;
     padding-right: 4px;
@@ -82,4 +84,19 @@
 }
 .close:active {
     background-color: var(--tabs-close-bg-active);
+}
+
+.drop-indicator {
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--tabs-txt-active);
+}
+.drop-indicator.left {
+    left: -1.5px;
+}
+.drop-indicator.right {
+    right: -1.5px;
 }

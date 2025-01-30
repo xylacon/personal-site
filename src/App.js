@@ -48,7 +48,16 @@ function App() {
         }
     }
 
-    const [activeSidebar, setActiveSidebar] = useState()
+    const initialId = "home.html"
+    const initialOpenTabs = [{...searchArrOfObj(Nav, initialId)}]
+
+    const [activeSidebar, setActiveSidebar] = useState(initialId) // node id
+    const [activeBlock, setActiveBlock] = useState(initialId) // ul id
+    const [openTabs, setOpenTabs] = useState(initialOpenTabs)
+    const [activeTab, setActiveTab] = useState(initialId)
+    const [filename, setFilename] = useState(initialId)
+
+    // Sidebar functionality
     function onClickSidebar(e) {
         if (e.id === "Sidebar") {
             toggleActiveSidebar(e)
@@ -83,6 +92,22 @@ function App() {
         e.classList.remove("inactive")
         e.classList.add("active")
         setActiveSidebar(e.id)
+
+        if (e.id !== "Sidebar") {
+            toggleActiveBlock(e)
+        }
+    }
+    function toggleActiveBlock(e) {
+        const newParent = e.parentElement
+        const newParentId = newParent.firstElementChild.id
+
+        if (activeBlock && newParentId !== activeBlock) {
+            const currParent = getEleById(activeBlock, "Sidebar").parentElement
+            currParent.classList.remove("active")
+        }
+
+        newParent.classList.add("active")
+        setActiveBlock(newParentId)
     }
     function toggleFolder(e) {
         const ul = e.closest("ul")
@@ -126,10 +151,7 @@ function App() {
         e.classList.add("inactive")
     }
 
-    const initialOpenTabs = [{...searchArrOfObj(Nav, "home.html")}]
-    const initialActiveTab = "home.html"
-    const [openTabs, setOpenTabs] = useState(initialOpenTabs)
-    const [activeTab, setActiveTab] = useState(initialActiveTab)
+    // Tab functionality
     function openNewTab(id) {
          // If tab isn't already open, add it
         if (!searchArrOfObj(openTabs, id)) {
@@ -158,6 +180,7 @@ function App() {
     }
     function closeTab(tab) {
         if (tab.id === activeTab) {
+            let newTab
             if (tab.nextSibling) {
                 toggleActiveTabAndNode(tab.nextSibling)
             }
@@ -166,6 +189,7 @@ function App() {
             }
             else { // If last tab closed, then no active tab
                 setActiveTab()
+                setFilename("")
             }
         }
 
@@ -182,10 +206,14 @@ function App() {
 
         e.classList.add("active")
         setActiveTab(e.id)
+
+        // Open content
+        setFilename(e.id)
     }
     function toggleActiveTabAndNode(e) {
         toggleActiveTab(e)
 
+        // Toggle node as active
         const sidebarNode = getEleById(e.id, "Sidebar")
         openParentFolder(sidebarNode)
         toggleActiveInactiveSidebar(sidebarNode)
@@ -194,8 +222,8 @@ function App() {
     return (
         <div id="App" onClick={onClick}>
             <Sidebar Nav={Nav} />
-            <Tabs openTabs={openTabs} activeTab={activeTab} />
-            <Content />
+            <Tabs openTabs={openTabs} activeTab={activeTab} onClickTabs={onClickTabs} />
+            <Content filename={filename} />
             <Footer />
         </div>
     )
