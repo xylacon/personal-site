@@ -1,22 +1,21 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 import '../style/Tabs.css'
 import Tab from './Tab'
+import { getEleById, searchArrOfObj } from '../utils'
 
-const Tabs = ({ openTabs, activeTab, onClickTabs }) => {
+const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
+    // OnDrag events
     const [draggedTab, setDraggedTab] = useState()
-
     function handleDragStart(event) {
         const tab = event.target.closest(".tab")
         if (tab) {
-            onClickTabs(tab)
+            toggleActiveTab(tab)
             setDraggedTab(tab)
         }
     }
-
     function handleDragEnd() {
         setDraggedTab()
     }
-
     function handleDrop(event) {
         const targetTab = event.target.closest(".tab")
 
@@ -40,7 +39,6 @@ const Tabs = ({ openTabs, activeTab, onClickTabs }) => {
             openTabs.splice(insertIndex, 0, movedTab)
         }
     }
-
     function isRightHalf(event) {
         // Determine which half of tab the mouse is on
 
@@ -51,12 +49,75 @@ const Tabs = ({ openTabs, activeTab, onClickTabs }) => {
         return mouseX > rect.left + (rect.width / 2)
     }
 
+    // OnClick events
+    const [openTabs, setOpenTabs] = useState([])
+    function onClick(event) {
+        const e = event.target
+        const tab = e.closest(".tab")
+        if (!tab) return
+
+        if (e.classList.contains("close")) {
+            closeTab(tab)
+            return
+        }
+        
+        toggleActiveTab(tab)
+    }
+    function closeTab(tab) {
+        if (tab.id === activeTab) {
+            if (tab.nextSibling) {
+                toggleActiveTab(tab.nextSibling)
+            }
+            else if (tab.previousSibling) {
+                toggleActiveTab(tab.previousSibling)
+            }
+            else {
+                // If last tab closed, then no active tab
+                setActiveTab()
+            }
+        }
+
+        // remove from list
+        setOpenTabs(oldOpenTabs =>
+            oldOpenTabs.filter(item => item.id !== tab.id)
+        )
+    }
+    function toggleActiveTab(e) {
+        if (activeTab && activeTab !== e.id) {
+            const currActive = getEleById(e.id, "Tabs")
+            currActive.classList.remove("active")
+        }
+ 
+        e.classList.add("active")
+        setActiveTab(e.id)
+    }
+    useEffect(() => {
+        if (activeTab === activeSidebar) return
+
+        const node = getEleById(activeSidebar, "Sidebar")
+        if (!node || node.classList.contains("title")) return
+
+        // If tab isn't already open, add it
+        if (!searchArrOfObj(openTabs, activeSidebar)) {
+            setOpenTabs(oldOpenTabs => ([
+                ...oldOpenTabs,
+                {...searchArrOfObj(Nav, activeSidebar)}
+            ]))
+        }
+
+        // Set tab to active
+        setTimeout(() => {
+            const newTab = getEleById(activeSidebar, "Tabs")
+            toggleActiveTab(newTab)
+        }, 0)
+    }, [activeSidebar])
+
     const tabs = openTabs && openTabs.map(tab => {
         return <Tab key={tab.id} id={tab.id} label={tab.label} icon={tab.icon} active={tab.id === activeTab} onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDrop={handleDrop} isRightHalf={isRightHalf} />
     })
 
     return (
-        <div id="Tabs">
+        <div id="Tabs" onClick={onClick}>
             <ul>
                 {tabs && tabs}
             </ul>

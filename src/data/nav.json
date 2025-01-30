@@ -1,16 +1,16 @@
 [
 	{
-		"id": "home.html",
+		"id": "Home",
 		"label": "home.html",
 		"icon": "html"
 	},
 	{
-        "id": "about.html",
+        "id": "About",
         "label": "about.html",
         "icon": "html"
     },
     {
-        "id": "contact.html",
+        "id": "Contact",
         "label": "contact.html",
         "icon": "html"
     },
@@ -19,26 +19,26 @@
         "label": "Projects",
         "children": [
             {
-                "id": "project1.html",
+                "id": "Project1",
                 "label": "project1.html",
                 "icon": "html"
             },
             {
-                "id": "project2.html",
+                "id": "Project2",
                 "label": "project2.html",
                 "icon": "html"
             },
             {
-                "id": "project-3",
+                "id": "Project-3",
                 "label": "Project 3",
                 "children": [
                     {
-                        "id": "file1.html",
+                        "id": "File1",
                         "label": "file1.html",
                         "icon": "html"
                     },
                     {
-                        "id": "file2.html",
+                        "id": "File2",
                         "label": "file2.html",
                         "icon": "html"
                     }
@@ -47,7 +47,7 @@
         ]
 	},
     {
-        "id": "readme.md",
+        "id": "README",
         "label": "README.md",
         "icon": "markdown"
     }
