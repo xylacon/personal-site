@@ -27,6 +27,7 @@ const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab }) => {
         if (!node) return
 
         toggleActiveSidebar(node)
+
         if (node.classList.contains("title")) {
             toggleFolder(e)
         }
@@ -96,6 +97,12 @@ const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab }) => {
             setActiveSidebar()
         }
     }, [activeTab])
+
+    useEffect(() => {
+        // Open Home on startup
+        const initial = getEleById("Home", "Sidebar")
+        toggleActiveSidebar(initial)
+    }, [])
 
     // Get folder structure
     const level = 0

@@ -9,6 +9,8 @@ const Content = ({ activeTab }) => {
     const [activeFile, setActiveFile] = useState()
 
     useEffect(() => {
+        if (!activeTab) return
+
         const files = {
             Home: Home
         }
@@ -18,7 +20,7 @@ const Content = ({ activeTab }) => {
 
     return (
         <main id="Content">
-            {activeFile ? (activeFile) : (<p>No Content.</p>)}
+            {activeFile && activeFile}
         </main>
     )
 }

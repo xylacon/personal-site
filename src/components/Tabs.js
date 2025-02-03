@@ -92,6 +92,8 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
         setActiveTab(e.id)
     }
     useEffect(() => {
+        // Open new tab
+
         if (activeTab === activeSidebar) return
 
         const node = getEleById(activeSidebar, "Sidebar")
@@ -104,13 +106,16 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
                 {...searchArrOfObj(Nav, activeSidebar)}
             ]))
         }
-
-        // Set tab to active
-        setTimeout(() => {
-            const newTab = getEleById(activeSidebar, "Tabs")
-            toggleActiveTab(newTab)
-        }, 0)
     }, [activeSidebar])
+    useEffect(() => {
+        // After opening new tab, activate tab
+        
+        if (!openTabs.length) return
+
+        const tabId = openTabs.at(-1).id
+        const newTab = getEleById(tabId, "Tabs")
+        toggleActiveTab(newTab)
+    }, [openTabs])
 
     const tabs = openTabs && openTabs.map(tab => {
         return <Tab key={tab.id} id={tab.id} label={tab.label} icon={tab.icon} active={tab.id === activeTab} onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDrop={handleDrop} isRightHalf={isRightHalf} />
