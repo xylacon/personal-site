@@ -12,3 +12,20 @@
     background-color: var(--content-bg);
     border-right: 1px solid var(--border-color);
 }
+
+#Content .page {
+    counter-reset: item 0;
+    padding: 10px 0 0 25px;
+}
+#Content .page p {
+    counter-increment: item;
+    position: relative;
+    padding-left: 33px;
+    line-height: 1.4em;
+}
+#Content .page p::before {
+    content: counter(item) " ";
+    position: absolute;
+    left: 0;
+    color: var(--content-txt-side);
+}

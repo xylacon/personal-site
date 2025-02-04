@@ -105,7 +105,11 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
                 ...oldOpenTabs,
                 {...searchArrOfObj(Nav, activeSidebar)}
             ]))
+            return
         }
+
+        const newTab = getEleById(activeSidebar, "Tabs")
+        toggleActiveTab(newTab)
     }, [activeSidebar])
     useEffect(() => {
         // After opening new tab, activate tab

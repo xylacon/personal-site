@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from 'react'
-// import {
-//     home
-// } from '../data'
-import Home from '../data/Home'
+import {
+    Home,
+    About,
+    Contact,
+    Skills
+} from '../data'
 import '../style/Content.css'
 
 const Content = ({ activeTab }) => {
@@ -12,7 +14,10 @@ const Content = ({ activeTab }) => {
         if (!activeTab) return
 
         const files = {
-            Home: Home
+            Home: Home,
+            About: About,
+            Contact: Contact,
+            Skills: Skills
         }
         const MyComponent = files[activeTab]
         setActiveFile(MyComponent)
