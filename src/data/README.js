@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Skills = () => {
+const README = () => {
 	return (
 		<section className="page">
 			<p>
-				Skills n stuff
+				Something...
 			</p>
 		</section>
 	)
 }
 
-export default Skills
+export default README

@@ -4,7 +4,7 @@ import Node from './Node'
 import '../style/Sidebar.css'
 import { getEleById } from '../utils'
 
-const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab }) => {
+const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab, getIcon }) => {
     // Set proper size for block lines
     const [nodeHeight, setNodeHeight] = useState(0)
     const titleId = "Title"
@@ -79,6 +79,8 @@ const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab }) => {
         ul.classList.add("open")
     }
     useEffect(() => {
+        // When active tab changes, change active sidebar node
+
         if (activeSidebar === activeTab) return
         if (activeTab) {
             const node = getEleById(activeTab, "Sidebar")
@@ -108,15 +110,15 @@ const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab }) => {
     const level = 0
     const contents = Nav && Nav.map(node => {
         if (node.children) {
-            return <Folder key={node.id} id={node.id} label={node.label} nodes={node.children} level={level + 1} nodeHeight={nodeHeight} />
+            return <Folder key={node.id} id={node.id} label={node.label} nodes={node.children} level={level + 1} nodeHeight={nodeHeight} getIcon={getIcon} />
         }
-        return <Node key={node.id} id={node.id} label={node.label} icon={node.icon} level={level + 1} />
+        return <Node key={node.id} id={node.id} label={node.label} icon={node.icon} level={level + 1} getIcon={getIcon} />
     })
 
     return (
         <nav id="Sidebar" onClick={onClick}>
             <ul className='open'>
-                <Node id={titleId} label={"Richard Denton"} icon={"folder"} level={level} isTitle={true} />
+                <Node id={titleId} label={"Richard Denton"} icon={"folder"} level={level} isTitle={true} getIcon={getIcon} />
                 {contents && contents}
             </ul>
         </nav>

@@ -1,7 +1,9 @@
 #Tabs {
-	position: fixed;
+	position: relative;
     top: 0;
     left: var(--sidebar-width);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     width: calc(100% - var(--sidebar-width));
     height: var(--tabs-height);
@@ -16,6 +18,11 @@
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
 }
+
+/* #Tabs.scroll::-webkit-scrollbar {
+    width: 0;
+    height: 3px;
+} */
 
 #Tabs ul {
     display: flex;
@@ -58,7 +65,7 @@
 .tab.active {
     background-color: var(--content-bg);
     border-top: 1px solid var(--tabs-border-active);
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    border-bottom: 1px solid var(--tabs-border-bottom-active);
     color: var(--tabs-txt-active);
 }
 

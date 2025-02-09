@@ -5,6 +5,7 @@
 
     width: calc(100% - var(--sidebar-width));
     height: var(--content-height);
+    padding-top: 10px;
 
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
@@ -12,20 +13,93 @@
     background-color: var(--content-bg);
     border-right: 1px solid var(--border-color);
 }
+#Content.shadow {
+    box-shadow: inset 0px 2px 5px -2px var(--tabs-shadow);
+}
+
+#Content.scroll {
+    overflow-x: hidden;
+}
+#Content.scroll::-webkit-scrollbar {
+    width: 12px;
+}
 
 #Content .page {
     counter-reset: item 0;
-    padding: 10px 0 0 25px;
+    --padding-left: 64px;
 }
 #Content .page p {
     counter-increment: item;
     position: relative;
-    padding-left: 33px;
+    padding-left: var(--padding-left);
     line-height: 1.4em;
 }
 #Content .page p::before {
     content: counter(item) " ";
     position: absolute;
     left: 0;
+    width: 38px;
+
     color: var(--content-txt-side);
+    text-align: right;
+}
+
+#Content p.indent {
+    padding-left: calc(var(--padding-left) * 1.4)
+}
+
+/* Text variations */
+.variable {
+    color: var(--txt-variable);
+    text-decoration-color: var(--txt-variable);
+}
+
+.function {
+    color: var(--txt-function);
+    text-decoration-color: var(--txt-function);
+}
+
+.numeral {
+    color: var(--txt-numeral);
+    text-decoration-color: var(--txt-numeral);
+}
+
+.string {
+    color: var(--txt-string);
+    text-decoration-color: var(--txt-string);
+}
+.string::before {
+    content: '\"'
+}
+.string::after {
+    content: '\"'
+}
+
+.comment {
+    color: var(--txt-comment);
+    text-decoration-color: var(--txt-comment);
+}
+.comment.html::before {
+    content: '<!-- '
+}
+.comment.html::after {
+    content: ' --> '
+}
+.comment.js::before,
+.comment.cpp::before {
+    content: '// '
+}
+.comment.python::before {
+    content: '# '
+}
+
+.brackets::before,
+.brackets::after {
+    color: var(--txt-bracket);
+}
+.brackets::before {
+    content: '[';
+}
+.brackets::after {
+    content: ']';
 }

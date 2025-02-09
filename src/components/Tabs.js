@@ -3,7 +3,7 @@ import '../style/Tabs.css'
 import Tab from './Tab'
 import { getEleById, searchArrOfObj } from '../utils'
 
-const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
+const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar, getIcon }) => {
     // OnDrag events
     const [draggedTab, setDraggedTab] = useState()
     function handleDragStart(event) {
@@ -51,6 +51,7 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
 
     // OnClick events
     const [openTabs, setOpenTabs] = useState([])
+    const [newOpenTab, setNewOpenTab] = useState()
     function onClick(event) {
         const e = event.target
         const tab = e.closest(".tab")
@@ -92,7 +93,7 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
         setActiveTab(e.id)
     }
     useEffect(() => {
-        // Open new tab
+        // When active sidebar changes, change active tab
 
         if (activeTab === activeSidebar) return
 
@@ -101,10 +102,13 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
 
         // If tab isn't already open, add it
         if (!searchArrOfObj(openTabs, activeSidebar)) {
+            const newObj = searchArrOfObj(Nav, activeSidebar)
             setOpenTabs(oldOpenTabs => ([
                 ...oldOpenTabs,
-                {...searchArrOfObj(Nav, activeSidebar)}
+                {...newObj}
             ]))
+
+            setNewOpenTab(newObj)
             return
         }
 
@@ -114,15 +118,16 @@ const Tabs = ({ Nav, activeTab, setActiveTab, activeSidebar }) => {
     useEffect(() => {
         // After opening new tab, activate tab
         
-        if (!openTabs.length) return
+        if (!openTabs.length || !newOpenTab) return
 
         const tabId = openTabs.at(-1).id
         const newTab = getEleById(tabId, "Tabs")
         toggleActiveTab(newTab)
+        setNewOpenTab()
     }, [openTabs])
 
     const tabs = openTabs && openTabs.map(tab => {
-        return <Tab key={tab.id} id={tab.id} label={tab.label} icon={tab.icon} active={tab.id === activeTab} onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDrop={handleDrop} isRightHalf={isRightHalf} />
+        return <Tab key={tab.id} id={tab.id} label={tab.label} icon={tab.icon} active={tab.id === activeTab} onDragStart={handleDragStart} onDragEnd={handleDragEnd} onDrop={handleDrop} isRightHalf={isRightHalf} getIcon={getIcon} />
     })
 
     return (

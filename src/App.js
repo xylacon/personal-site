@@ -1,9 +1,12 @@
 import './style/App.css'
 
 import { useEffect, useState } from 'react'
-import { Content, Footer, Sidebar, Tabs } from './components'
+import { Header, Content, Footer, Sidebar, Tabs } from './components'
 import Nav from './data/nav.json'
 import { getEleById } from './utils'
+
+import { BsChevronRight } from "react-icons/bs"
+import { IoInformationCircleOutline } from "react-icons/io5"
 
 function App() {
     useEffect(() => {
@@ -50,10 +53,25 @@ function App() {
         currActive.classList.add("inactive")
     }
 
+    // Icons
+    function getIcon(icon) {
+        switch (icon) {
+            case "folder":
+                return <BsChevronRight />
+            case "html":
+                return "<>"
+            case "markdown":
+                return <IoInformationCircleOutline />
+            default:
+                return ""
+        }
+    }
+
     return (
         <div id="App" onClick={onClick}>
-            <Sidebar Nav={Nav} activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} activeTab={activeTab} />
-            <Tabs Nav={Nav} activeTab={activeTab} setActiveTab={setActiveTab} activeSidebar={activeSidebar} />
+            {/* <Header /> */}
+            <Sidebar Nav={Nav} activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} activeTab={activeTab} getIcon={getIcon} />
+            <Tabs Nav={Nav} activeTab={activeTab} setActiveTab={setActiveTab} activeSidebar={activeSidebar} getIcon={getIcon} />
             <Content activeTab={activeTab} />
             <Footer />
         </div>

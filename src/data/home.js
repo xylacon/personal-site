@@ -1,19 +1,30 @@
 import React from 'react'
+import Spacing from '../components/Spacing'
 
 const Home = () => {
+	const whitespace = " "
+
 	return (
 		<section className="page">
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente cupiditate iure nostrum molestias a sed aperiam expedita corporis commodi placeat?
+				<span className="comment html">
+					Richard Dylan Denton – Software Engineering & Web Development
+				</span>
 			</p>
+			<Spacing />
 			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et fugiat adipisci neque eum veniam culpa.
+				Welcome to my personal website!
 			</p>
+			<Spacing />
 			<p>
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat at, odio tempore quam tenetur dolor, fuga similique unde reprehenderit ipsam voluptatibus sapiente ut.
+				I am a recent Computer Science graduate from the <span className='function'><a className='link' href="https://uh.edu/nsm/computer-science/" target='_blank' rel="noreferrer">University of Houston</a></span> with strong interests in:{whitespace}
+				<span className="brackets">
+					<span className="variable">software_development</span>, <span className="variable">web_design</span>, <span className="variable">data_science</span>
+				</span>
 			</p>
+			<Spacing />
 			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea praesentium deleniti repudiandae temporibus velit, sunt animi nemo dicta.
+				You are encouraged to explore my work, my background, and the website itself.
 			</p>
 		</section>
 	)

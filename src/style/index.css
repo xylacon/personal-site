@@ -33,16 +33,22 @@ html[data-theme="light"] {
     --tabs-txt: var(--txt-secondary);
     --tabs-txt-active: var(--txt);
     --tabs-border-active: var(--accent);
+    --tabs-border-bottom-active: rgb(248, 248, 248);
     --tabs-close-txt: rgb(134, 134, 134);
     --tabs-close-bg-hover: rgb(233, 233, 233);
     --tabs-close-bg-active: rgb(228, 228, 228);
+    --tabs-shadow: rgba(0, 0, 0, 0.08);
 
     --footer-bg: var(--sidebar-bg);
 
     --border-color: rgb(229, 229, 229);
+    --scrollbar: rgba(0, 0, 0, 0.2);
+    --scrollbar-hover: rgba(0, 0, 0, 0.37);
 
     --icon-html: rgb(206, 114, 57);
+    --icon-markdown: rgb(73, 139, 167);
 }
+
 html[data-theme="dark"] {
     --accent: rgb(0, 120, 212);
     --txt: rgb(204, 204, 204);
@@ -78,18 +84,24 @@ html[data-theme="dark"] {
     --tabs-txt: var(--txt-secondary);
     --tabs-txt-active: rgb(255, 255, 255);
     --tabs-border-active: var(--accent);
+    --tabs-border-bottom-active: rgba(0, 0, 0, 0);
     --tabs-close-txt: rgb(154, 154, 154);
     --tabs-close-bg-hover: rgb(51, 52, 52);
     --tabs-close-bg-active: rgb(53, 55, 55);
+    --tabs-shadow: rgba(0, 0, 0, 0.7);
 
     --footer-bg: var(--sidebar-bg);
 
     --border-color: rgb(43, 43, 43);
+    --scrollbar: rgba(255, 255, 255, 0.19);
+    --scrollbar-hover: rgba(255, 255, 255, 0.278);
 
     --icon-html: rgb(220, 118, 15);
+    --icon-markdown: rgb(81, 154, 186);
 }
 
 :root {
+    --header-height: 30px;
     --sidebar-width: 175px;
     --tabs-height: 40px;
     --content-height: 65%;
