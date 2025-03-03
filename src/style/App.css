@@ -31,6 +31,9 @@
     color: inherit;
     text-decoration-color: inherit;
 }
+.link.markdown {
+    color: var(--accent)
+}
 .link:hover {
     opacity: 0.8;
 }

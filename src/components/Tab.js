@@ -29,7 +29,9 @@ const Tab = ({ id, label, icon, active, onDragStart, onDragEnd, onDrop, isRightH
             onDrop={handleDrop}
         >
             {dropPosition === "left" && <div className="drop-indicator left"></div>}
-            <div className={icon ? `icon ${icon}` : "icon"}>{getIcon(icon)}</div>
+            <div className={icon ? `icon ${icon}` : "icon"}>
+                {getIcon(icon)}
+            </div>
             <p>{label}</p>
             <div className="close">&times;</div>
             {dropPosition === "right" && <div className="drop-indicator right"></div>}

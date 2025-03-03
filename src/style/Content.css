@@ -9,6 +9,7 @@
 
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;
+    line-height: 1.4em;
 
     background-color: var(--content-bg);
     border-right: 1px solid var(--border-color);
@@ -46,6 +47,22 @@
 
 #Content p.indent {
     padding-left: calc(var(--padding-left) * 1.4)
+}
+
+#Content .page.markdown {
+    padding-left: 38px;
+    font-family: "Roboto", serif;
+    font-size: 1.2em;
+    line-height: 1.4em;
+}
+#Content .page.markdown h1,
+#Content .page.markdown h2,
+#Content .page.markdown h3,
+#Content .page.markdown h4 {
+    margin-top: 0.15em;
+    margin-bottom: 0.3em;
+    font-weight: 400;
+    line-height: 1em;
 }
 
 /* Text variations */
@@ -94,7 +111,9 @@
 }
 
 .brackets::before,
-.brackets::after {
+.brackets::after,
+.parentheses::before,
+.parentheses::after {
     color: var(--txt-bracket);
 }
 .brackets::before {
@@ -102,4 +121,10 @@
 }
 .brackets::after {
     content: ']';
+}
+.parentheses::before {
+    content: '(';
+}
+.parentheses::after {
+    content: ')';
 }

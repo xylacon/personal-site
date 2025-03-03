@@ -6,8 +6,8 @@
 	},
 	{
         "id": "About",
-        "label": "about.html",
-        "icon": "html"
+        "label": "about.md",
+        "icon": "markdown"
     },
     {
         "id": "Contact",

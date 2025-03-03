@@ -27,7 +27,7 @@ const Content = ({ activeTab }) => {
     const [activeFile, setActiveFile] = useState()
 
     useEffect(() => {
-        if (!activeTab) return
+        // if (!activeTab) return
 
         const files = {
             Home: Home,
@@ -52,7 +52,10 @@ const Content = ({ activeTab }) => {
     }, [activeFile])
 
     return (
-        <main id="Content" className={`scroll ${hasShadow && "shadow"}`}>
+        <main
+            id="Content"
+            className={`scroll ${hasShadow && "shadow"}`}
+        >
             {activeFile && activeFile}
             {activeFile && <div style={{ height: `calc(${height}px - 1.4em)` }}></div>}
         </main>

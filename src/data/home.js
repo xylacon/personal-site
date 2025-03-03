@@ -19,7 +19,9 @@ const Home = () => {
 			<p>
 				I am a recent Computer Science graduate from the <span className='function'><a className='link' href="https://uh.edu/nsm/computer-science/" target='_blank' rel="noreferrer">University of Houston</a></span> with strong interests in:{whitespace}
 				<span className="brackets">
-					<span className="variable">software_development</span>, <span className="variable">web_design</span>, <span className="variable">data_science</span>
+					<span className="variable">software_development</span>,{whitespace}
+					<span className="variable">web_design</span>,{whitespace}
+					<span className="variable">data_science</span>
 				</span>
 			</p>
 			<Spacing />
