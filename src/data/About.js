@@ -20,7 +20,21 @@ const About = () => {
 			<br />
 
 			<h3>Hobbies</h3>
-			Beyond development, I also enjoy photography. <br />
+			Beyond development, I also enjoy music and photography. <br />
+			<br />
+
+			<h4>Music</h4>
+			I started teaching myself piano during high school after seeing Elton John in Beaumont, TX. Learning was hard at first because I refused to use any outside sources to help me learn; I instead wanted to discover the instrument in my own way and learn by ear. <br />
+			<br />
+			Eventually, I became proficient enough to get accepted into the <a className='link markdown' href="https://uh.edu/kgmca/music/" target='_blank' rel="noreferrer">Moores School of Music</a>, where I was able to learn music in a classical manner and underwent rigorous training in piano. <br />
+			<br />
+			These days, I simply enjoy playing piano when I'm bored or just need to jam. Occasionally, I'll write/record some music or perform for family/friends. <br />
+			<br />
+
+			<h4>Photography</h4>
+			Since I was young, I had always enjoyed using cameras and maximizing the photos I could take with my iPod. As the years went on, I eventually created an <a className='link markdown' href="https://www.instagram.com/xylacon/" target='_blank' rel="noreferrer">Instagram</a> to post my photography. <br />
+			<br />
+			Once I made the decision to buy a professional camera (Sony A7-II), I learned Adobe Lightroom and Photoshop so that I could make the most out of my photos. My favorite part about this hobby is how peaceful the process is.
 		</section>
 	)
 }

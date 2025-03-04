@@ -10,50 +10,8 @@
         "icon": "markdown"
     },
     {
-        "id": "Contact",
-        "label": "contact.html",
-        "icon": "html"
-    },
-    {
         "id": "Skills",
         "label": "skills.html",
         "icon": "html"
-    },
-	{
-        "id": "Projects",
-        "label": "Projects",
-        "children": [
-            {
-                "id": "Project1",
-                "label": "project1.html",
-                "icon": "html"
-            },
-            {
-                "id": "Project2",
-                "label": "project2.html",
-                "icon": "html"
-            },
-            {
-                "id": "Project-3",
-                "label": "Project 3",
-                "children": [
-                    {
-                        "id": "File1",
-                        "label": "file1.html",
-                        "icon": "html"
-                    },
-                    {
-                        "id": "File2",
-                        "label": "file2.html",
-                        "icon": "html"
-                    }
-                ]
-            }
-        ]
-	},
-    {
-        "id": "README",
-        "label": "README.md",
-        "icon": "markdown"
     }
 ]

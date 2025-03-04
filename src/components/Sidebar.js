@@ -115,6 +115,14 @@ const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab, getIcon }) =
         return <Node key={node.id} id={node.id} label={node.label} icon={node.icon} level={level + 1} getIcon={getIcon} />
     })
 
+    // Window resizing
+    // const minWidth = 175
+    // const maxWidth = 400
+    // useEffect(() => {
+    //     const sidebar = document.getElementById("Sidebar")
+
+    // }, [])
+
     return (
         <nav id="Sidebar" onClick={onClick}>
             <ul className='open'>
