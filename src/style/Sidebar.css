@@ -1,10 +1,10 @@
 #Sidebar {
     position: fixed;
-    top: 0;
+    top: var(--heigher-height);
     left: 0;
 
     width: var(--sidebar-width);
-    height: 100%;
+    height: calc(100% - var(--header-height));
 
     background-color: var(--sidebar-bg);
     border: 1px solid var(--border-color);

@@ -67,13 +67,18 @@ function App() {
         }
     }
 
+    // Content resizing based on Footer
+    const [isActiveFooter, setIsActiveFooter] = useState(true)
+
     return (
         <div id="App" onClick={onClick}>
-            {/* <Header /> */}
+            <Header isActiveFooter={isActiveFooter} setIsActiveFooter={setIsActiveFooter} />
             <Sidebar Nav={Nav} activeSidebar={activeSidebar} setActiveSidebar={setActiveSidebar} activeTab={activeTab} getIcon={getIcon} />
             <Tabs Nav={Nav} activeTab={activeTab} setActiveTab={setActiveTab} activeSidebar={activeSidebar} getIcon={getIcon} />
-            <Content activeTab={activeTab} />
-            <Footer />
+            <div className="content-footer-wrapper">
+                <Content activeTab={activeTab} footerHeightChange={isActiveFooter} />
+                {/* <Footer /> */}
+            </div>
         </div>
     )
 }

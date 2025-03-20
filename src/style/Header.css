@@ -1,3 +1,23 @@
 #Header {
 	height: var(--header-height);
+	padding-right: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: end;
+
+	background-color: var(--header-bg);
+	border-bottom: 1px solid var(--border-color);
+}
+
+#Header .icons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	font-size: 1.6em;
+}
+#Header .icons > div {
+	cursor: pointer;
+	line-height: 0.65em;
 }

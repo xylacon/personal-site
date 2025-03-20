@@ -8,7 +8,7 @@ import {
 } from '../data'
 import '../style/Content.css'
 
-const Content = ({ activeTab }) => {
+const Content = ({ activeTab, footerHeightChange }) => {
     const [hasShadow, setHasShadow] = useState(false)
     useEffect(() => {
         // Show shadow when user scrolls in #Content
@@ -49,7 +49,7 @@ const Content = ({ activeTab }) => {
         const contentHeight = content.getBoundingClientRect().height
 
         setHeight(contentHeight)
-    }, [activeFile])
+    }, [activeFile, footerHeightChange])
 
     return (
         <main

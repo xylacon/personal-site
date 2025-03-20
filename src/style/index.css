@@ -39,6 +39,8 @@ html[data-theme="light"] {
     --tabs-close-bg-active: rgb(228, 228, 228);
     --tabs-shadow: rgba(0, 0, 0, 0.08);
 
+    --header-bg: var(--sidebar-bg);
+
     --footer-bg: var(--sidebar-bg);
 
     --border-color: rgb(229, 229, 229);
@@ -90,6 +92,8 @@ html[data-theme="dark"] {
     --tabs-close-bg-active: rgb(53, 55, 55);
     --tabs-shadow: rgba(0, 0, 0, 0.7);
 
+    --header-bg: var(--sidebar-bg);
+
     --footer-bg: var(--sidebar-bg);
 
     --border-color: rgb(43, 43, 43);
@@ -101,10 +105,10 @@ html[data-theme="dark"] {
 }
 
 :root {
-    --header-height: 30px;
+    --header-height: 36px;
     --sidebar-width: 175px;
-    --tabs-height: 40px;
-    --content-height: 65%;
+    --tabs-height: 36px;
+    --footer-height: 150px;
 }
 
 * {

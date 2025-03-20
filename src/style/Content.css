@@ -1,11 +1,8 @@
 #Content {
-    position: fixed;
-    top: var(--tabs-height);
-    left: var(--sidebar-width);
-
-    width: calc(100% - var(--sidebar-width));
-    height: var(--content-height);
+    overflow: scroll;
     padding-top: 10px;
+    /* height: auto; */
+    flex-grow: 1;
 
     font-family: "Roboto Mono", serif;
     font-optical-sizing: auto;

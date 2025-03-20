@@ -116,11 +116,14 @@ const Sidebar = ({ Nav, activeSidebar, setActiveSidebar, activeTab, getIcon }) =
     })
 
     // Window resizing
-    // const minWidth = 175
-    // const maxWidth = 400
+    // const minWidth = 175;
+    // const maxWidth = 400;
     // useEffect(() => {
-    //     const sidebar = document.getElementById("Sidebar")
-
+    //     const sidebar = document.getElementById("Sidebar");
+    //     const initialWidth = getComputedStyle(sidebar).getPropertyValue("--sidebar-width").trim();
+    //     if (!initialWidth) {
+    //         sidebar.style.setProperty("--sidebar-width", "175px");
+    //     }
     // }, [])
 
     return (
